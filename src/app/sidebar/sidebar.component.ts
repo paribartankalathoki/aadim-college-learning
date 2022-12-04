@@ -18,4 +18,8 @@ export class SidebarComponent implements OnInit {
   onTutorialsNavigation() {
     this.router.navigate(['/tutorials']);
   }
+
+  onUserManagementNavigation() {
+    this.router.navigate(['/user-list']);
+  }
 }
