@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Location} from '@angular/common';
+import {UsersService} from '../services/users.service';
+import {AddUserRequestModel} from '../models/add-user-request.model';
 
 @Component({
   selector: 'app-add-user',
@@ -15,7 +17,8 @@ export class AddUserComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private location: Location
+    private location: Location,
+    private userService: UsersService
   ) { }
 
   ngOnInit(): void {
@@ -43,5 +46,6 @@ export class AddUserComponent implements OnInit {
   onSaveDetails() {
     this.submitted = true;
     console.log("user details: ", this.formDetails.value);
+    this.userService.saveUser(this.formDetails.value as AddUserRequestModel);
   }
 }
