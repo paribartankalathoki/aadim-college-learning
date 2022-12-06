@@ -15,7 +15,7 @@ export class UsersService {
 
 
   saveUser(data: AddUserRequestModel): Observable<any> {
-    return this.httpClient.post(environment.baseUrl, data);
+    return this.httpClient.post(environment.baseUrl + 'users', data);
   }
 
 

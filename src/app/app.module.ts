@@ -13,6 +13,7 @@ import { AddTutorialsComponent } from './add-tutorials/add-tutorials.component';
 import { UserListComponent } from './user-management/user-list/user-list.component';
 import { AddUserComponent } from './user-management/add-user/add-user.component';
 import { EditUserComponent } from './user-management/edit-user/edit-user.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { EditUserComponent } from './user-management/edit-user/edit-user.compone
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [DatePipe],
