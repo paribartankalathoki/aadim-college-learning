@@ -46,8 +46,13 @@ export class AddUserComponent implements OnInit {
   onSaveDetails() {
     this.submitted = true;
     console.log("user details: ", this.formDetails.value);
+    if (this.formDetails.invalid) {
+      return;
+    }
     this.userService.saveUser(this.formDetails.value as AddUserRequestModel).subscribe({
       next: (value: any) => {
+        this.formDetails.reset();
+        this.location.back();
         console.log("user save successfully !");
       }, error: (err: any) => {
         console.log("unable to save user !");
